@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  wazuh.agent:
+    build: .
+    hostname: wazuh-docker-monitor
+    container_name: wazuh-docker-agent
+    restart: always
+    environment:
+      - WAZUH_MANAGER=host.docker.internal
+      - WAZUH_AGENT_NAME=wazuh-docker-monitor
+      - WAZUH_REGISTRATION_SERVER=host.docker.internal
+      - WAZUH_REGISTRATION_PORT=1515
+      - WAZUH_MANAGER_PORT=1514
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - ./ossec.conf:/var/ossec/etc/ossec.conf
+      - ./client.keys:/var/ossec/etc/client.keys
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
