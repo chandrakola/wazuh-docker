@@ -17,7 +17,7 @@ git pull upstream main
 git push origin main
 ```
 
-### 2. Update your feature branch
+### 2. Update your deployment branch
 Now, replay your custom changes (the `agent/` folder, etc.) on top of the new code.
 
 ```bash
