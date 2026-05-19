@@ -11,10 +11,7 @@ fi
 
 # Start agent in foreground
 echo "Starting Wazuh Agent..."
-/var/ossec/bin/wazuh-agentd
-/var/ossec/bin/wazuh-logcollector
-/var/ossec/bin/wazuh-syscheckd
-/var/ossec/bin/wazuh-modulesd
+/var/ossec/bin/wazuh-control start
 
 # Tail logs to keep container alive
 tail -f /var/ossec/logs/ossec.log
