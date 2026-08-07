@@ -123,6 +123,8 @@ volumes:
   filebeat_etc:
   filebeat_var:
   wazuh-indexer-data:
+    external: true
+    name: wazuh-indexer-data
   wazuh-dashboard-config:
   wazuh-dashboard-custom:
 
