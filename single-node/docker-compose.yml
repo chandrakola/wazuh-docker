@@ -111,5 +111,7 @@ volumes:
   wazuh_active_response:
   wazuh_wodles:
   wazuh-indexer-data:
+    external: true
+    name: wazuh-indexer-data
   wazuh-dashboard-config:
   wazuh-dashboard-custom:
