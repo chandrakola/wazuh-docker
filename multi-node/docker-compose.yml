@@ -227,7 +227,13 @@ volumes:
   worker-wazuh-active-response:
   worker-wazuh-wodles:
   wazuh-indexer-data-1:
+    external: true
+    name: wazuh-indexer-data-1
   wazuh-indexer-data-2:
+    external: true
+    name: wazuh-indexer-data-2
   wazuh-indexer-data-3:
+    external: true
+    name: wazuh-indexer-data-3
   wazuh-dashboard-config:
   wazuh-dashboard-custom:
